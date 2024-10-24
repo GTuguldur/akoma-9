@@ -8,6 +8,14 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "./ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 import {
   Card,
@@ -25,12 +33,12 @@ interface MainSectionProps {
 
 export default function MainSection({ children }: MainSectionProps) {
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div className="max-w-7xl ml-[200px] px-8">
       {/* Flex container for two sections */}
       <div className="flex justify-between">
         {/* Left Section */}
         <div className="flex-1 p-6 ml-8">
-          <p className="flex justify-center color: gray">Express checkout</p>
+          <p className="flex justify-center text-sm text-[rgb(112,112,112)]">Express checkout</p>
           <div className="flex space-x-2 pt-4">
             <Button className="flex items-center justify-center w-[286px] h-[48px] bg-[rgb(89,47,244)] text-white">
               <svg
@@ -58,26 +66,103 @@ export default function MainSection({ children }: MainSectionProps) {
               />
             </Button>
           </div>
-          <p className="flex justify-center p-4">OR</p>
-          <div className="flex justify-between align-center">
-            <h2 className="text-xl font-bold">Contact</h2>
-            <a href="">Log in</a>
+          <div className="flex items-center justify-center py-4">
+            <div className="flex-1 border-t border-gray-300"></div>
+            <p className="mx-4 text-sm text-[rgb(112,112,112)]">OR</p>
+            <div className="flex-1 border-t border-gray-300 "></div>
           </div>
-          <Input className="py-4 w-100%" type="email" placeholder="Email" />
-          <Checkbox /> <Label>Email me with news and offers</Label>
-          <Card>
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+
+          <div className="flex justify-between items-center">
+            <h2 className="text-xl font-bold font-size: 21px my-4">Contact</h2>
+            <a className="underline text-sm" href="">Log in</a>
+          </div>
+          <div className="flex-1 items-center">
+            <Input className="py-4 mb-4 w-100% h-[49px]" type="email" placeholder="Email" />
+            <div className="flex items-center gap-[10px]">
+              <Checkbox /> <Label className="my-4">Email me with news and offers</Label>
+            </div>
+          </div>
+          <h1 className="my-2 text-xl font-bold">Payment</h1>
+          <p className="text-gray-500 text-sm mb-3">All transactions are secure and encrypted.</p>
+          <Card className="bg-[rgb(0,0,0,0.04)]">
+            <CardHeader className="p-4 border border-black rounded-t-lg">
+              <CardTitle><RadioGroup defaultValue="Credit card">
+                <div className="flex items-center justify-between space-x-2">
+                  <div className="flex items-center justify-center gap-[3px]">
+                    <RadioGroupItem value="Credit card" id="Credit card" />
+                    <Label htmlFor="Credit card">Credit card</Label>
+                  </div>
+                  <div className="flex gap-[3px]">
+                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg" alt="" />
+                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/maestro.ByfUQi1c.svg" alt="" />
+                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/mastercard.1c4_lyMp.svg" alt="" />
+                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg" alt="" />
+                    <Button className="bg-white text-color-black w-[38px] h-[24px] popup">+1</Button>
+                  </div>
+                </div>
+              </RadioGroup>
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p>Card Content</p>
+            <CardContent className="p-4">
+              <Input type="email" placeholder="Card number" />
+              <div className="flex gap-[14px] py-4">
+                <Input type="email" placeholder="Expiration date (MM / YY)" />
+                <Input type="email" placeholder="Security code" />
+              </div>
+              <Input type="email" placeholder="Name on card" />
             </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
+            <CardFooter className="bg-white py-2">
+              <RadioGroup className="bg-white" defaultValue="Credit card">
+                <div className="flex w-[530px] justify-between space-x-2">
+                  <div className="flex items-center justify-center">
+                    <RadioGroupItem value="Credit card" id="Credit card" />
+                    <p className="w-[475px] pl-2 ">iDeal</p>
+                  </div>
+                  <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/ideal.Dvz0zDwq.svg" alt="" />
+                </div>
+              </RadioGroup>
             </CardFooter>
           </Card>
-
+          <h1 className="my-4 font-semibold">Billing address</h1>
+          <div className="flex-1 ">
+            <Select>
+              <SelectTrigger className="mt-4 h-[49px]">
+                <SelectValue placeholder="Country" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Mongolia">Mongolia</SelectItem>
+                <SelectItem value="USA">United States</SelectItem>
+                <SelectItem value="China">China</SelectItem>
+              </SelectContent>
+            </Select>
+            <div className="flex mt- gap-[14px] ">
+              <Input className="mt-4 h-[49px]" type="string" placeholder="First name" />
+              <Input className="mt-4 h-[49px]" type="string" placeholder="Last name" />
+            </div>
+            <Input className="mt-4 h-[49px]" type="string" placeholder="Company (optional)" />
+            <Input className="mt-4 h-[49px]" type="string" placeholder="Address" />
+            <div className="flex gap-[14px]">
+              <Input className="mt-4 h-[49px]" type="string" placeholder="City" />
+              <Input className="mt-4 h-[49px]" type="string" placeholder="Postal code (optional)" />
+            </div>
+            <h1 className="my-4 font-semibold">Remember me</h1>
+            <div className="flex gap-[10px] p-4 items-center border rounded-lg">
+              <Checkbox className="border border-gray-400"></Checkbox><p className="text-sm">Save my information for a faster checkout</p>
+            </div>
+            <div className="flex items-center gap-[5px] mb-9 mt-4">
+              <span class="inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="w-[15px] h-[12px] stroke-current text-black fill-none">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.3c0-2.298 1.131-4.9 3.5-4.9s3.5 2.602 3.5 4.9m-8.4.47v5.36c0 .26.21.47.47.47h8.86c.26 0 .47-.21.47-.47V6.77a.47.47 0 0 0-.47-.47H2.57a.47.47 0 0 0-.47.47"></path>
+                </svg>
+              </span>
+              <p className="text-xs text-[rgb(112,112,112)] ">Secure and encrypted</p>
+            </div>
+            <Button className="w-[583px] h-[58.6px] text-lg font-bold">Pay now</Button>
+            <footer className="flex items-center gap-[10px] underline border-t border-gray-300 mt-20 pt-[15px]">
+              <a className="text-[14px]" href="">Terms of service</a>
+              <a className="text-[14px]" href="">Contact information</a>
+            </footer>
+          </div>
         </div>
 
 
@@ -87,11 +172,10 @@ export default function MainSection({ children }: MainSectionProps) {
 
 
         {/* Right Section */}
-        <div className="flex-1 bg-[rgb(245, 245, 245)] p-6">
-          <h2 className="text-xl font-bold">Right Section</h2>
-          <p>This section can contain your other content, such as images, text, or buttons.</p>
-          <img src="/image/akoyaaa.jpg" alt="Image on the right" className="w-full rounded-md" />
-          <button className="mt-4 bg-green-500 text-white py-2 px-4 rounded">Checkout</button>
+        <div className="w-[1500px] bg-[rgb(245,245,245)] border-l p-[38px]">
+          <div className="flex justify-center bg-[rgb(214,214,214)] w-[64px] h-[64px]">
+            <img src="/image/Tokyo-Volume-II_64x64.jpg" alt="Image on the right"/>
+          </div>
         </div>
       </div>
 
