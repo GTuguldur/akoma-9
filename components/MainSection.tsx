@@ -33,11 +33,11 @@ interface MainSectionProps {
 
 export default function MainSection({ children }: MainSectionProps) {
   return (
-    <div className="max-w-7xl ml-[200px] px-8">
+    <div className="ml-[200px]">
       {/* Flex container for two sections */}
       <div className="flex justify-between">
         {/* Left Section */}
-        <div className="flex-1 p-6 ml-8">
+        <div className="flex-1 p-6 mr-5 ml-20">
           <p className="flex justify-center text-sm text-[rgb(112,112,112)]">Express checkout</p>
           <div className="flex space-x-2 pt-4">
             <Button className="flex items-center justify-center w-[286px] h-[48px] bg-[rgb(89,47,244)] text-white">
@@ -77,7 +77,7 @@ export default function MainSection({ children }: MainSectionProps) {
             <a className="underline text-sm" href="">Log in</a>
           </div>
           <div className="flex-1 items-center">
-            <Input className="py-4 mb-4 w-100% h-[49px]" type="email" placeholder="Email" />
+            <Input className="py-4 mb-4 w-100% " type="email" placeholder="Email" />
             <div className="flex items-center gap-[10px]">
               <Checkbox /> <Label className="my-4">Email me with news and offers</Label>
             </div>
@@ -126,7 +126,7 @@ export default function MainSection({ children }: MainSectionProps) {
           <h1 className="my-4 font-semibold">Billing address</h1>
           <div className="flex-1 ">
             <Select>
-              <SelectTrigger className="mt-4 h-[49px]">
+              <SelectTrigger className="mt-4 ">
                 <SelectValue placeholder="Country" />
               </SelectTrigger>
               <SelectContent>
@@ -136,14 +136,14 @@ export default function MainSection({ children }: MainSectionProps) {
               </SelectContent>
             </Select>
             <div className="flex mt- gap-[14px] ">
-              <Input className="mt-4 h-[49px]" type="string" placeholder="First name" />
-              <Input className="mt-4 h-[49px]" type="string" placeholder="Last name" />
+              <Input className="mt-4 " type="string" placeholder="First name" />
+              <Input className="mt-4 " type="string" placeholder="Last name" />
             </div>
-            <Input className="mt-4 h-[49px]" type="string" placeholder="Company (optional)" />
-            <Input className="mt-4 h-[49px]" type="string" placeholder="Address" />
+            <Input className="mt-4 " type="string" placeholder="Company (optional)" />
+            <Input className="mt-4 " type="string" placeholder="Address" />
             <div className="flex gap-[14px]">
-              <Input className="mt-4 h-[49px]" type="string" placeholder="City" />
-              <Input className="mt-4 h-[49px]" type="string" placeholder="Postal code (optional)" />
+              <Input className="mt-4 " type="string" placeholder="City" />
+              <Input className="mt-4 " type="string" placeholder="Postal code (optional)" />
             </div>
             <h1 className="my-4 font-semibold">Remember me</h1>
             <div className="flex gap-[10px] p-4 items-center border rounded-lg">
@@ -172,9 +172,33 @@ export default function MainSection({ children }: MainSectionProps) {
 
 
         {/* Right Section */}
-        <div className="w-[1500px] bg-[rgb(245,245,245)] border-l p-[38px]">
-          <div className="flex justify-center bg-[rgb(214,214,214)] w-[64px] h-[64px]">
-            <img src="/image/Tokyo-Volume-II_64x64.jpg" alt="Image on the right"/>
+        <div className="flex-1/2 relative top-0 w-[1500px] bg-[rgb(245,245,245)] border-l p-[38px]">
+          <div className="sticky top-10">
+            <div className="flex">
+              <div className="flex justify-center bg-[rgb(230,230,230)] w-[64px] h-[64px] rounded-sm border border-[rgb(214,214,214)]">
+                <img src="/image/Tokyo-Volume-II_64x64.jpg" alt="Image on the right" />
+                <div className="flex absolute top-[-8px] left-[50px]">
+                  <span className="quantity">1</span>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center pl-3">
+                <p className="text-sm">TOKYO-VOLUME-TWO-COLLECTION</p>
+                <p className="text-xs">Standard</p>
+              </div>
+              <div className="flex items-center pl-10 pb-4 text-sm">
+                <p>₮152,000.00</p>
+              </div>
+            </div>
+            <div className="flex w-[440px] gap-4 py-5">
+              <Input type="email" placeholder="Discount code" />
+              <Button className="w-[69px] h-[51px] bg-[rgb(237,237,237)] text-[rgb(102, 102, 102) border border-[rgb(237,237,237)]]">Apply</Button>
+            </div>
+            <div className="flex gap-[265px] my-4">
+              <h1 className="text-lg font-bold">Total</h1>
+              <div className="flex items-baseline gap-2">
+                <p className="flex text-xs ">MNT</p> <h1 className="text-lg font-semibold">₮152,000.00</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -76,3 +76,14 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+span .quantity{
+  display: flex;
+  justify-content: center;
+  border: 50%;
+  border-color: rgb(102, 102, 102);
+  color: white;
+  width: 5;
+  height: 5;
+}
