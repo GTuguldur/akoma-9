@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center max-w-[1180px] mx-auto p-8">
+    <header className="flex justify-between items-center px-[305px] py-[21px] h-82px mx-auto max-w-{1180px} border-b border-rgb(222, 222, 222)">
       <Image
         src="/image/akoyaaa.jpg" // Image path
         alt="A descriptive text for the image"
-        width={100} // Width of the image
+        width={118} // Width of the image
         height={100} // Height of the image
         className="h-auto" // Maintains aspect ratio
       />
