@@ -149,8 +149,8 @@ export default function MainSection({ children }: MainSectionProps) {
               <Checkbox className="border border-gray-400"></Checkbox><p className="text-sm">Save my information for a faster checkout</p>
             </div>
             <div className="flex items-center gap-[5px] mb-9 mt-4">
-              <span class="inline-flex">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="w-[15px] h-[12px] stroke-current text-black fill-none">
+              <span className="inline-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" className="w-[15px] h-[12px] stroke-current text-black fill-none">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.3c0-2.298 1.131-4.9 3.5-4.9s3.5 2.602 3.5 4.9m-8.4.47v5.36c0 .26.21.47.47.47h8.86c.26 0 .47-.21.47-.47V6.77a.47.47 0 0 0-.47-.47H2.57a.47.47 0 0 0-.47.47"></path>
                 </svg>
               </span>
