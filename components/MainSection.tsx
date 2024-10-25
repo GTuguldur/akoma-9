@@ -40,7 +40,7 @@ export default function MainSection({ children }: MainSectionProps) {
         <div className="flex-1 p-6 mr-5 ml-20">
           <p className="flex justify-center text-sm text-[rgb(112,112,112)]">Express checkout</p>
           <div className="flex space-x-2 pt-4">
-            <Button className="flex items-center justify-center w-[286px] h-[48px] bg-[rgb(89,47,244)] text-white">
+            <Button className="flex items-center hover:bg-[rgb(69,17,214)] justify-center w-[286px] h-[48px] bg-[rgb(89,47,244)] text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="inherit"
@@ -178,7 +178,7 @@ export default function MainSection({ children }: MainSectionProps) {
               <div className="flex justify-center bg-[rgb(230,230,230)] w-[64px] h-[64px] rounded-sm border border-[rgb(214,214,214)]">
                 <img src="/image/Tokyo-Volume-II_64x64.jpg" alt="Image on the right" />
                 <div className="flex absolute top-[-8px] left-[50px]">
-                  <span className="quantity">1</span>
+                  <span className="flex justify-center w-5 h-5 items-center bg-[rgb(102,102,102)] text-xs font-bold text-white border border-gray-500 rounded-full">1</span>
                 </div>
               </div>
               <div className="flex flex-col justify-center pl-3">
