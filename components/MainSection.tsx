@@ -9,6 +9,7 @@ import { Input } from "./ui/input";
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import CreditCard from "./CreditCard";
 import {
   Select,
   SelectContent,
@@ -24,6 +25,12 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
 
 
 interface MainSectionProps {
@@ -82,46 +89,16 @@ export default function MainSection({ children }: MainSectionProps) {
             </div>
           </div>
           <h1 className="my-2 text-xl font-bold">Payment</h1>
+
+
+
+          <CreditCard></CreditCard>
+
+
+
+
           <p className="text-gray-500 text-sm mb-3">All transactions are secure and encrypted.</p>
-          <Card className="bg-[rgb(0,0,0,0.04)]">
-            <CardHeader className="p-4 border border-black rounded-t-lg">
-              <CardTitle><RadioGroup defaultValue="Credit card">
-                <div className="flex items-center justify-between space-x-2">
-                  <div className="flex items-center justify-center gap-[3px]">
-                    <RadioGroupItem value="Credit card" id="Credit card" />
-                    <Label htmlFor="Credit card">Credit card</Label>
-                  </div>
-                  <div className="flex gap-[3px]">
-                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg" alt="" />
-                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/maestro.ByfUQi1c.svg" alt="" />
-                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/mastercard.1c4_lyMp.svg" alt="" />
-                    <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg" alt="" />
-                    <Button className="bg-white text-color-black w-[38px] h-[24px] popup">+1</Button>
-                  </div>
-                </div>
-              </RadioGroup>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-4">
-              <Input type="email" placeholder="Card number" />
-              <div className="flex gap-[14px] py-4">
-                <Input type="email" placeholder="Expiration date (MM / YY)" />
-                <Input type="email" placeholder="Security code" />
-              </div>
-              <Input type="email" placeholder="Name on card" />
-            </CardContent>
-            <CardFooter className="bg-white py-2">
-              <RadioGroup className="bg-white" defaultValue="Credit card">
-                <div className="flex w-[530px] justify-between space-x-2">
-                  <div className="flex items-center justify-center">
-                    <RadioGroupItem value="Credit card" id="Credit card" />
-                    <p className="w-[475px] pl-2 ">iDeal</p>
-                  </div>
-                  <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/ideal.Dvz0zDwq.svg" alt="" />
-                </div>
-              </RadioGroup>
-            </CardFooter>
-          </Card>
+
           <h1 className="my-4 font-semibold">Billing address</h1>
           <div className="flex-1 ">
             <Select>
