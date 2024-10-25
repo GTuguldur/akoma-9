@@ -3,8 +3,7 @@
 
 
 // app/page.tsx
-import Header from "@/components/header"; // Adjusted to match the file name
-import { Button } from "@/components/ui/button";
+import Header from "@/components/Header"; // Adjusted to match the file name
 import MainSection from "@/components/MainSection";
 export default function HomePage() {
   return (
